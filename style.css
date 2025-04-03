@@ -1,0 +1,103 @@
+/* Estilos generales */
+:root {
+    --primary-color: #589cbb; /* Azul futurista */
+    --secondary-color: #FFC107; /* Naranja brillante */
+    --background-color: #2e3138; /* Fondo oscuro */
+    --text-color: #FFFFFF; /* Blanco */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del header */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.navegacion ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content:right;
+}
+
+.navegacion li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navegacion li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Estilos del contenido principal */
+.contenido {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.contenido h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contenido img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Estilos del footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Efectos visuales */
+.navegacion li a {
+    position: relative;
+}
+
+.navegacion li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navegacion li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navegacion ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navegacion li {
+        margin-bottom: 10px;
+    }
+}
